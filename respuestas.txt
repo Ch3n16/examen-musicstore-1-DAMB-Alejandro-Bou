@@ -1,0 +1,58 @@
+================================================================
+EXAMEN MUSICSTORE - APARTADO 1.1
+Interpretacion del diagrama UML
+================================================================
+
+a) Que significan los simbolos - y + en UML (visibilidad)?
+
+   El simbolo - (menos) indica visibilidad PRIVADA. Aparece delante
+   de los atributos (titulo, artista, anyo, disponible), lo que
+   significa que solo se puede acceder a ellos desde dentro de la
+   propia clase Album. Desde fuera no se puede leer ni modificar
+   estos atributos directamente.
+
+   El simbolo + (mas) indica visibilidad PUBLICA. Aparece delante
+   del constructor y de los metodos (getTitulo, getArtista, getAnyo,
+   isDisponible, ToString), lo que significa que se pueden llamar
+   desde fuera de la clase, por ejemplo desde el Main o desde otras
+   clases del proyecto.
+
+   Esto es el principio de ENCAPSULACION: los datos se ocultan
+   (privados) y se exponen unicamente a traves de metodos publicos
+   controlados (getters).
+
+
+b) Que tipo de dato es 'disponible' y que valores puede tener?
+
+   El atributo 'disponible' es de tipo BOOL (booleano). Solo puede
+   tomar dos valores posibles:
+
+      - true  (verdadero)  -> el album esta disponible para la venta
+      - false (falso)      -> el album NO esta disponible (agotado)
+
+   Es el tipo ideal para representar estados binarios de si/no.
+
+
+c) Para que sirve el metodo ToString() en una clase de C#?
+
+   ToString() es un metodo heredado de la clase Object (clase base
+   de la que heredan TODAS las clases en C#). Su funcion es devolver
+   una representacion en forma de cadena (string) del objeto.
+
+   Por defecto, ToString() devuelve el nombre completo de la clase
+   (por ejemplo "MusicStore.Album"), lo cual no resulta util para
+   el usuario.
+
+   Por eso se SOBRESCRIBE (override) en nuestras clases para que
+   muestre informacion legible y significativa del objeto. En el
+   caso de Album, devuelve:
+
+      "Titulo - Artista (Anyo)"
+
+   Por ejemplo: "Master of Puppets - Metallica (1986)"
+
+   Ademas, C# llama automaticamente a ToString() cuando se concatena
+   un objeto con un string o cuando se pasa a Console.WriteLine(),
+   lo que facilita mucho mostrar objetos por pantalla.
+
+================================================================
